@@ -144,9 +144,38 @@ const css = `
   height: 34px;
   margin-bottom: 4px;
   padding: 3px 7px 5px;
-  border-bottom: 1px solid var(--ui-stroke-secondary);
-  border-radius: 15px 15px 0 0;
-  background: color-mix(in srgb, var(--dt-card) 34%, transparent);
+  border-bottom: 0;
+  border-radius: 15px 15px 10px 10px;
+  background: color-mix(in srgb, var(--dt-card) 52%, transparent);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] [data-tree-tab] {
+  height: 24px;
+  align-self: center;
+  margin-inline: 2px;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 9px;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--ui-text-tertiary);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] [data-tree-tab][data-active='true'] {
+  background: var(--dt-primary) !important;
+  box-shadow: none !important;
+  color: var(--dt-primary-foreground);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] [data-tree-tab]:not([data-active='true']):hover {
+  border: 0 !important;
+  background: color-mix(in srgb, var(--dt-card) 46%, transparent) !important;
+  box-shadow: none !important;
+  color: var(--ui-text-primary);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] [data-tree-tab] * {
+  box-shadow: none !important;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] button:hover {
@@ -187,6 +216,24 @@ const css = `
   :root[data-hermes-theme='openai-shadcn'] [data-tree-group] {
     border-radius: 13px;
   }
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='terminal']),
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has(.xterm) {
+  border-top-color: transparent;
+  border-radius: 16px;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='terminal']) [data-zone-tabstrip] {
+  border-bottom: 0;
+}
+
+:root[data-hermes-theme='openai-shadcn'] :is(.xterm, .xterm-viewport, .xterm-screen) {
+  border-radius: 12px;
+}
+
+:root[data-hermes-theme='openai-shadcn'] .xterm-viewport {
+  overflow: hidden;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-chat-surface][data-chat-unfocused] {
