@@ -12,6 +12,7 @@ These are **not bundled with `hermes-agent`**. The core repo ships only the plug
 | [`plugin-llm-async-example`](./plugin-llm-async-example) | `ctx.llm.acomplete()` + `asyncio.gather()` | Async LLM lane — concurrent forward + sentiment + back-translation pass for `/translate` |
 | [`example-dashboard`](./example-dashboard) | `dashboard/manifest.json` | Bare-minimum dashboard plugin — a tab, a slot injection, a backend route |
 | [`strike-freedom-cockpit`](./strike-freedom-cockpit) | dashboard theme + slot plugin | Complete custom-skin reskin — palette, layout variant, asset slots, sidebar HUD |
+| [`openai-shadcn-desktop`](./openai-shadcn-desktop) | Desktop `THEMES_AREA` + theme-gated layout | Accessible light/dark palette, floating pane shell, polished composer, instant rollback |
 
 ## Installing an example as a user plugin
 
@@ -25,6 +26,7 @@ cp -r hermes-example-plugins/plugin-llm-example       ~/.hermes/plugins/
 cp -r hermes-example-plugins/plugin-llm-async-example ~/.hermes/plugins/
 cp -r hermes-example-plugins/example-dashboard        ~/.hermes/plugins/
 cp -r hermes-example-plugins/strike-freedom-cockpit   ~/.hermes/plugins/
+cp -r hermes-example-plugins/openai-shadcn-desktop    ~/.hermes/desktop-plugins/openai-shadcn
 
 # enable any with a slash command surface
 hermes plugins enable plugin-llm-example
@@ -45,6 +47,7 @@ Pair each plugin in this repo with its docs page:
 | `plugin-llm-async-example` | [Plugin LLM Access](https://hermes-agent.nousresearch.com/docs/developer-guide/plugin-llm-access) |
 | `example-dashboard` | [Extending the Dashboard](https://hermes-agent.nousresearch.com/docs/user-guide/features/extending-the-dashboard) |
 | `strike-freedom-cockpit` | [Extending the Dashboard](https://hermes-agent.nousresearch.com/docs/user-guide/features/extending-the-dashboard) |
+| `openai-shadcn-desktop` | [Desktop Plugin SDK](https://hermes-agent.nousresearch.com/docs/developer-guide/desktop-plugin-sdk) |
 
 ## Contributing a new example
 
