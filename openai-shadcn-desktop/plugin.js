@@ -85,7 +85,7 @@ const css = `
   --openai-shell: #101010;
   --openai-panel-border: #303030;
   --openai-panel-shadow: 0 4px 16px rgb(0 0 0 / 10%);
-  --openai-dot: rgb(255 255 255 / 1.5%);
+  --openai-dot: rgb(255 255 255 / 2%);
 }
 
 :root[data-hermes-theme='openai-shadcn'][data-hermes-mode='light'] {
@@ -96,7 +96,7 @@ const css = `
   --openai-shell: #e7e7e9;
   --openai-panel-border: #d6d6da;
   --openai-panel-shadow: 0 4px 16px rgb(24 24 27 / 5%);
-  --openai-dot: rgb(24 24 27 / 2%);
+  --openai-dot: rgb(24 24 27 / 2.5%);
 }
 
 :root[data-hermes-theme='openai-shadcn'] body {
@@ -140,7 +140,33 @@ const css = `
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] {
+  min-height: 34px;
+  height: 34px;
+  margin-bottom: 4px;
+  padding: 3px 7px 5px;
+  border-bottom: 1px solid var(--ui-stroke-secondary);
   border-radius: 15px 15px 0 0;
+  background: color-mix(in srgb, var(--dt-card) 34%, transparent);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] button:hover {
+  border-color: transparent !important;
+  background-color: color-mix(in srgb, var(--dt-card) 42%, transparent) !important;
+  box-shadow: none !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [class*='group/project-header'] {
+  min-height: 34px;
+  height: 34px;
+  margin-bottom: 4px;
+  padding: 4px 10px 6px;
+  border-bottom: 1px solid var(--ui-stroke-secondary);
+  background: color-mix(in srgb, var(--dt-card) 28%, transparent);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group] [class*='group/project-header'] button:hover {
+  border-color: transparent !important;
+  background-color: color-mix(in srgb, var(--dt-card) 42%, transparent) !important;
 }
 
 /* The 8px gutter replaces the old visible seam; the hit target remains live. */
@@ -210,13 +236,13 @@ const css = `
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-slot='profile-dropdown']:hover {
-  border-color: color-mix(in srgb, var(--ui-stroke-secondary) 72%, transparent);
+  border-color: color-mix(in srgb, var(--ui-stroke-secondary) 34%, transparent);
   background-color: color-mix(in srgb, var(--dt-card) 46%, transparent) !important;
   box-shadow: none !important;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-slot='profile-dropdown'][data-state='open'] {
-  border-color: var(--ui-stroke-secondary);
+  border-color: color-mix(in srgb, var(--ui-stroke-secondary) 52%, transparent);
   background-color: color-mix(in srgb, var(--dt-card) 64%, transparent) !important;
   box-shadow: none !important;
 }
@@ -242,7 +268,7 @@ const css = `
   [data-tree-group]
 ) button:not(:disabled):not([class*='bg-primary']):not([class*='rounded-full']):hover {
   background-color: color-mix(in srgb, var(--dt-card) 48%, transparent) !important;
-  border-color: color-mix(in srgb, var(--ui-stroke-secondary) 70%, transparent) !important;
+  border-color: color-mix(in srgb, var(--ui-stroke-secondary) 28%, transparent) !important;
   color: var(--ui-text-primary) !important;
   box-shadow: none !important;
   filter: none !important;
