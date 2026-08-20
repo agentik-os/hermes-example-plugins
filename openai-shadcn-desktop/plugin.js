@@ -163,6 +163,29 @@ const css = `
   }
 }
 
+:root[data-hermes-theme='openai-shadcn'] [data-chat-surface][data-chat-unfocused] {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-chat-surface] {
+  transition: none !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-slot='statusbar'] {
+  width: calc(100% - 16px);
+  min-height: 24px;
+  height: 24px;
+  align-self: center;
+  margin: 0 8px 6px;
+  padding-inline: 6px;
+  overflow: hidden;
+  border: 1px solid var(--openai-panel-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--dt-background) 90%, var(--openai-shell)) !important;
+  box-shadow: none !important;
+}
+
 :root[data-hermes-theme='openai-shadcn'] [data-slot='sidebar-wrapper'],
 :root[data-hermes-theme='openai-shadcn'] [data-slot='sidebar'] {
   background-color: var(--sidebar) !important;
@@ -226,6 +249,24 @@ const css = `
   transform: none !important;
 }
 
+:root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type button {
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    opacity 120ms ease !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type button:hover {
+  background-color: color-mix(in srgb, var(--dt-card) 46%, transparent) !important;
+  color: var(--ui-text-primary) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
 :root[data-hermes-theme='openai-shadcn'] [data-slot='aui_user-message-root'] button:hover {
   background-color: inherit !important;
   border-color: inherit !important;
@@ -273,6 +314,24 @@ const css = `
 :root[data-hermes-theme='openai-shadcn'] [data-slot='composer-surface'] [class*='grid-area:menu'] {
   align-self: center;
   transform: translateY(-3px);
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-slot='code-card'],
+:root[data-hermes-theme='openai-shadcn'] [data-slot='file-diff-panel'] {
+  overflow: hidden;
+  border: 1px solid var(--ui-stroke-secondary);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ui-bg-editor) 94%, var(--dt-background)) !important;
+  box-shadow: none !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-slot='code-card-body'] {
+  padding: 4px 5px;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-slot='tool-block'] {
+  overflow: hidden;
+  border-radius: 11px;
 }
 
 :root[data-hermes-theme='openai-shadcn'] :is(
