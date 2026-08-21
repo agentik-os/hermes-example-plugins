@@ -85,7 +85,7 @@ const css = `
   --openai-shell: #101010;
   --openai-panel-border: #303030;
   --openai-panel-shadow: 0 4px 16px rgb(0 0 0 / 10%);
-  --openai-dot: rgb(255 255 255 / 2%);
+  --openai-dot: rgb(255 255 255 / 2.5%);
 }
 
 :root[data-hermes-theme='openai-shadcn'][data-hermes-mode='light'] {
@@ -96,7 +96,7 @@ const css = `
   --openai-shell: #e7e7e9;
   --openai-panel-border: #d6d6da;
   --openai-panel-shadow: 0 4px 16px rgb(24 24 27 / 5%);
-  --openai-dot: rgb(24 24 27 / 2.5%);
+  --openai-dot: rgb(24 24 27 / 3%);
 }
 
 :root[data-hermes-theme='openai-shadcn'] body {
