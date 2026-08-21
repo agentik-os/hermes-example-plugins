@@ -189,7 +189,7 @@ const css = `
   height: 34px;
   margin-bottom: 4px;
   padding: 4px 10px 6px;
-  border-bottom: 1px solid var(--ui-stroke-secondary);
+  border-bottom: 0;
   background: color-mix(in srgb, var(--dt-card) 28%, transparent);
 }
 
@@ -216,6 +216,10 @@ const css = `
   :root[data-hermes-theme='openai-shadcn'] [data-tree-group] {
     border-radius: 13px;
   }
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='terminal']):has(.codicon-chevron-up) {
+  display: none !important;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='terminal']),
@@ -320,6 +324,12 @@ const css = `
   box-shadow: none !important;
   filter: none !important;
   transform: none !important;
+}
+
+:root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type {
+  height: 38px;
+  padding-block: 5px;
+  box-sizing: border-box;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type button {
