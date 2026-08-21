@@ -96,7 +96,7 @@ const css = `
   --openai-shell: #e7e7e9;
   --openai-panel-border: #d6d6da;
   --openai-panel-shadow: 0 4px 16px rgb(24 24 27 / 5%);
-  --openai-dot: rgb(24 24 27 / 3%);
+  --openai-dot: rgb(24 24 27 / 4%);
 }
 
 :root[data-hermes-theme='openai-shadcn'] body {
@@ -118,7 +118,7 @@ const css = `
 
 :root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:has(> [data-tree-split]),
 :root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:has(> [data-tree-group]) {
-  padding: 8px 8px 6px;
+  padding: 3px 8px 1px;
   background: transparent;
 }
 
@@ -137,6 +137,13 @@ const css = `
 
 :root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-slot='sidebar']) {
   background: var(--sidebar) !important;
+}
+
+/* Files should read as content on the pane surface, not as a second grey card
+   nested inside it. Keep only the selected-row affordance. */
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='files']) aside,
+:root[data-hermes-theme='openai-shadcn'] [data-tree-group]:has([data-tree-tab='files']) [data-project-tree] {
+  background: transparent !important;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-tree-group] [data-zone-tabstrip] {
@@ -251,11 +258,11 @@ const css = `
 
 :root[data-hermes-theme='openai-shadcn'] [data-slot='statusbar'] {
   width: calc(100% - 16px);
-  min-height: 24px;
-  height: 24px;
+  min-height: 28px;
+  height: 28px;
   align-self: center;
   margin: 0 8px 6px;
-  padding-inline: 6px;
+  padding: 2px 6px;
   overflow: hidden;
   border: 1px solid var(--openai-panel-border);
   border-radius: 10px;
@@ -327,9 +334,10 @@ const css = `
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type {
-  height: 38px;
+  height: 40px;
   padding-block: 5px;
   box-sizing: border-box;
+  background: transparent !important;
 }
 
 :root[data-hermes-theme='openai-shadcn'] [data-contrib-shell] > div:first-of-type button {
